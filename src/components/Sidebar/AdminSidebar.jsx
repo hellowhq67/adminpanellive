@@ -77,7 +77,7 @@ function AdminSidebar() {
               className={activeSubMenu === 5 ? "active" : ""}
               onClick={() => handleSubMenuClick(5)}
             >
-              <Link href="/dashboard/addproducts">Add products</Link>
+              <Link href="/dashboard/addproduct">Add products</Link>
             </li>
   
           </ul>

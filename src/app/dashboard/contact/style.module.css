@@ -43,15 +43,21 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
   }
-  
+  .modal img{
+    width: 100%;
+    object-fit: contain;
+  }
   .modalContent {
     background-color: #fefefe;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    color: black;
   }
-  
+  .modalContent p{
+    margin: 20px 3px;
+  }
   .close {
     color: #aaa;
     float: right;

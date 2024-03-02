@@ -2,18 +2,25 @@ import connectMongoDB from '@/db/db';
 import Follow from '@/models/follow';
 import { NextResponse } from 'next/server';
 
+// POST endpoint to follow a product
 export async function POST(request) {
     try {
         await connectMongoDB();
 
-        const {
-            userId,
-            productID,
-        } = await request.json();
+        // Extract userId and productId from the request body
+        const { userId, productId } = await request.json();
 
+        // Check if the user is already following the product
+        const existingFollow = await Follow.findOne({ userId, productId });
+
+        if (existingFollow) {
+            return NextResponse.json({ message: "You are already following this product" }, { status: 400 });
+        }
+
+        // Create a new follow record
         const followProduct = await Follow.create({
             userId,
-            productID,
+            productId,
         });
 
         return NextResponse.json({ message: "Follow success", followProduct }, { status: 201 });

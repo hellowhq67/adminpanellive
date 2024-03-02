@@ -1,0 +1,155 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 0px;
+}
+.wrapperCol {
+  display: flex;
+  flex-direction: column;
+  background: rgb(47, 41, 41);
+  padding: 20px;
+  border-radius: 20px;
+}
+.detail {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.selectWrpper {
+  display: flex;
+  align-items: center;
+}
+.selectWrpper .selectFrom {
+  margin: 16px 0px;
+  margin-right: 10px;
+  padding: 17px 40px;
+  width: 400px;
+  font-size: 18px;
+}
+.selectFrom option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1rem;
+}
+.inputCol {
+  display: flex;
+  flex-direction: column;
+  gap: 40px 0px;
+}
+.inputCol input {
+  padding: 10px 20px;
+  width: 400px;
+  margin: 20px 0px;
+}
+.selectFrom {
+  padding: 17px 40px;
+  width: 400px;
+  font-size: 18px;
+  margin: 20px 0px;
+}
+.button1 {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5rem;
+}
+
+
+.dropZoneRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.dropZoneRow div {
+  display: flex;
+  flex-direction: column;
+}
+.sizeInput{
+  padding: 16px 20px;
+  width: 400px;
+  margin: 20px 0px;
+}
+@media (max-width:750px) {
+  
+  .dropzone{
+    width: 200px;
+  }
+  .selectWrpper {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .selectWrpper .selectFrom {
+    margin: 16px 0px;
+    padding: 14px 30px;
+    width: 200px;
+    font-size: 14px;
+  }
+  .selectFrom option {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 10px;
+  }
+  .wrapperCol {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding:0px 20px;
+  }
+  .wrapperCol textarea{
+    width: 300px;
+  }
+  .dropZoneRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    width: 200px;
+    padding: 10px;
+  }
+  .dropZoneRow div {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+  }
+  .inputCol input {
+    padding: 10px 20px;
+    width: 200px;
+    margin: 20px 0px;
+  }
+  .selectWrpper input{
+    padding: 10px 20px;
+    width: 200px;
+    margin: 20px 0px;
+  }
+  .selectFrom {
+    padding: 17px 40px;
+    width: 200px;
+    font-size: 14px;
+    margin: 20px 0px;
+  }
+ 
+  .button1 {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5rem;
+  }
+  
+}

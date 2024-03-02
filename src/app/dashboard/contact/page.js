@@ -41,6 +41,7 @@ export default function Page() {
           <table className={style.table}>
             <thead>
               <tr>
+                <th>Email</th>
                 <th>Help Topic</th>
                 <th>Reason</th>
                 <th>Description</th>
@@ -51,12 +52,14 @@ export default function Page() {
             <tbody>
               {contacts.map(contact => (
                 <tr key={contact._id}>
+                  <td>{contact.email}</td>
+
                   <td>{contact.heplTopic}</td>
                   <td>{contact.reson}</td>
                   <td>{contact.description}</td>
                   <td>{contact.screenShot}</td>
                   <td>
-                    <button style={{padding:"8px 17px"}} onClick={() => openModal(contact)}>View</button>
+                    <button style={{ padding: "8px 17px" }} onClick={() => openModal(contact)}>View</button>
                   </td>
                 </tr>
               ))}
