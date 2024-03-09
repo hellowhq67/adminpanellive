@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const productSchema = new mongoose.Schema({
   userId: String,
   userName: String,
-  shippings: String,
+  shippings: Number,
   productImage1: String,
   productImage2: String,
   productImage3: String,
@@ -13,17 +13,18 @@ const productSchema = new mongoose.Schema({
   productName: String,
   size: String,
   color: String,
-  price: String,
-  floorPrice: String,
+  price: Number,
+  floorPrice:Number,
   description: String,
   vendor: String,
   condition: String,
   department: String,
   category: String,
   subcategory: String,
-  tag:Array,
+  tag: Array,
+  acceptOffer: Boolean,
 });
 
 const Product = mongoose.models.Product || mongoose.model('Product', productSchema);
 
-export default Product;
+export default Product

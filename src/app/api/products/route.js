@@ -1,3 +1,4 @@
+
 import { NextResponse } from 'next/server';
 
 import Product from '@/models/prouduct'; // Import the Product model
@@ -39,7 +40,8 @@ export async function POST(request) {
       department,
       category,
       subcategory,
-      tag
+      tag,
+      acceptOffer,
     } = await request.json();
 
     const newProduct = await Product.create({
@@ -63,7 +65,8 @@ export async function POST(request) {
       department,
       category,
       subcategory,
-      tag
+      tag,
+      acceptOffer,
     });
 
     return NextResponse.json({ message: "Product Created", product: newProduct }, { status: 201 });
@@ -71,4 +74,4 @@ export async function POST(request) {
     console.error("Error creating product:", error);
     return NextResponse.error(error);
   }
-}
+} 

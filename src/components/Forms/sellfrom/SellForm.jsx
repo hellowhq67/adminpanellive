@@ -18,10 +18,10 @@ export default function SellForm() {
   const [filteredSubCategories, setFilteredSubCategories] = useState([]);
   const [color, setColor] = useState("");
   const [desc, setDesc] = useState("");
-  const [shipment, SetShipment] = useState("");
-  const [price, setPrice] = useState("");
+  const [shipment, SetShipment] = useState(Number);
+  const [price, setPrice] = useState(Number);
   const [productName, setProductName] = useState("");
-  const [floorPrice, setFloorprice] = useState("");
+  const [floorPrice, setFloorprice] = useState(Number);
   const [imageUrl, setImageUrl] = useState("");
   const [imageUrl2, setImageUrl2] = useState("");
   const [imageUrl3, setImageUrl3] = useState("");
@@ -47,7 +47,7 @@ export default function SellForm() {
         body: JSON.stringify({
           userId: "STAF ID",
           userName: "STAFPRODUCTS",
-          shippings: shipment,
+          shippings: shipment, // Include shipping charges
           productImage1: imageUrl,
           productImage2: imageUrl2,
           productImage3: imageUrl3,
@@ -68,12 +68,36 @@ export default function SellForm() {
           tag: [tags],
         }),
       });
-
+      console.log("JSON Payload:", JSON.stringify({
+        userId: "STAF ID",
+        userName: "STAFPRODUCTS",
+        shippings: shipment, // Include shipping charges
+        productImage1: imageUrl,
+        productImage2: imageUrl2,
+        productImage3: imageUrl3,
+        productImage4: imageUrl4,
+        productImage5: imageUrl5,
+        designers: selectedDesigner,
+        productName: productName,
+        size: selectedSize,
+        color: color,
+        price: price,
+        floorPrice: floorPrice,
+        description: desc,
+        vendor: "STAF PICKS",
+        condition: selectedCondition,
+        department: department,
+        category: category,
+        subcategory: selectedSubCategory,
+        tag: [tags],
+      }));
+      
       const responseData = await response.json();
       console.log("Response:", responseData);
 
       if (response.status === 201) {
         toast.success("Product created successfully!");
+        router.push("/dasboard/products");
       } else {
         toast.error("Failed to create product!");
       }
