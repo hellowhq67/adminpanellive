@@ -16,7 +16,7 @@ function Dashboard() {
 
   const fetchProductData = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/products'); // Replace 'http://localhost:3001/api/products' with your actual API endpoint
+      const response = await axios.get('/api/products'); // Replace 'http://localhost:3001/api/products' with your actual API endpoint
       const products = response.data.products;
 
       const formattedData = products.map((product, index) => ({
