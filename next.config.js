@@ -1,13 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async headers() {
-    return [
-      {
+     {
         source: "/api/:path*", // Match any API route
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "http://localhost:3000", // Set your frontend origin
+            value: "*", // Set your frontend origin
           },
           {
             key: "Access-Control-Allow-Methods",
@@ -19,7 +18,7 @@ const nextConfig = {
           },
         ],
       },
-       {
+     {
         source: "/api/products/:path*", // Match any API route
         headers: [
           {
@@ -36,11 +35,8 @@ const nextConfig = {
           },
         ],
       },
-    ];
-  }, 
-  
-      {
-        source: "/api/follow/:path*", // Match any API route
+           {
+        source: "/api/contact/:path*", // Match any API route
         headers: [
           {
             key: "Access-Control-Allow-Origin",
@@ -56,9 +52,8 @@ const nextConfig = {
           },
         ],
       },
-    ];
-  }, 
-  
+    ]
+  }
 };
 
 module.exports = nextConfig;
