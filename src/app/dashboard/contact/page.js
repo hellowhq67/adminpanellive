@@ -12,7 +12,7 @@ export default function Page() {
     // Fetch contacts from the API
     const fetchContacts = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/contact');
+        const response = await fetch('/api/contact');
         const data = await response.json();
         setContacts(data.Contacts);
       } catch (error) {
