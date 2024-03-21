@@ -41,7 +41,7 @@ const nextConfig = {
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "*", // Set your frontend origin
+            value: "https://finalversion-of-grailed-front-end.vercel.app/", // Set your frontend origin
           },
           {
             key: "Access-Control-Allow-Methods",
