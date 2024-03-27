@@ -38,7 +38,7 @@ const nextConfig = {
         ],
       },
         {
-        source: "/api/products/total/:path*", // Match any API route
+        source: "/api/total/:path*", // Match any API route
         headers: [
           {
             key: "Access-Control-Allow-Origin",
