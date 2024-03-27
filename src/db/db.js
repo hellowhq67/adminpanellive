@@ -1,3 +1,6 @@
+import mongoose from "mongoose";
+
+
 const connectMongoDB = async () => {
   try {
     await mongoose.connect("mongodb+srv://floorapp355:J1YmCDnTvZsAvGmt@floorapp.ysgurtu.mongodb.net/my-app", {
@@ -17,4 +20,5 @@ const connectMongoDB = async () => {
     console.error("Failed to connect to MongoDB:", error);
   }
 };
-enale all request d
+export default connectMongoDB;
+
