@@ -1,24 +1,26 @@
-
 import { NextResponse } from 'next/server';
-
-import Product from '@/models/prouduct'; // Import the Product model
+import Product from '@/models/product'; // Import the Product model
 import connectMongoDB from '@/db/db';
+
+export async function getProducts() {
+  await connectMongoDB(); // Connect to your MongoDB database
+  const products = await Product.find({}); // Retrieve all products from the database
+  return products;
+}
+
 export async function GET() {
   try {
-    await connectMongoDB(); // Connect to your MongoDB database
-
-    const products = await Product.find({}); // Retrieve all products from the database
-
+    const products = await getProducts();
     return NextResponse.json({ products }); // Return the products as JSON response
   } catch (error) {
     console.error("Error fetching products:", error);
     return NextResponse.error(error); // Return an error response if there's an error
   }
 }
+
 export async function POST(request) {
   try {
     await connectMongoDB();
-
     const {
       userId,
       userName,
@@ -74,4 +76,4 @@ export async function POST(request) {
     console.error("Error creating product:", error);
     return NextResponse.error(error);
   }
-} 
+}
