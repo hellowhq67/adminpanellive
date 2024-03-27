@@ -34,6 +34,57 @@ const nextConfig = {
             key: "Access-Control-Allow-Headers",
             value: "Content-Type, Authorization",
           },
+           {
+        source: "/api/products/total/:path*", // Match any API route
+        headers: [
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "*", // Set your frontend origin
+          },
+          {
+            key: "Access-Control-Allow-Methods",
+            value: "GET, POST, PUT, DELETE, OPTIONS",
+          },
+          {
+            key: "Access-Control-Allow-Headers",
+            value: "Content-Type, Authorization",
+          },
+        ],
+      },
+              {
+        source: "/api/blog/:path*", // Match any API route
+        headers: [
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "*", // Set your frontend origin
+          },
+          {
+            key: "Access-Control-Allow-Methods",
+            value: "GET, POST, PUT, DELETE, OPTIONS",
+          },
+          {
+            key: "Access-Control-Allow-Headers",
+            value: "Content-Type, Authorization",
+          },
+        ],
+      },
+      {
+        source: "/api/contact/:path*", // Match any API route
+        headers: [
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "*", // Set your frontend origin
+          },
+          {
+            key: "Access-Control-Allow-Methods",
+            value: "GET, POST, PUT, DELETE, OPTIONS",
+          },
+          {
+            key: "Access-Control-Allow-Headers",
+            value: "Content-Type, Authorization",
+          },
+        ],
+      },
         ],
       },
     ];
