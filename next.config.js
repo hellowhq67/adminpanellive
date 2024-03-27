@@ -38,11 +38,11 @@ const nextConfig = {
         ],
       },
         {
-        source: "/api/total/:path*", // Match any API route
+        source: "/api/products/total/:path*", // Match any API route
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "*", // Set your frontend origin
+            value: "https://finalversion-of-grailed-front-end.vercel.app", // Set your frontend origin
           },
           {
             key: "Access-Control-Allow-Methods",
