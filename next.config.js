@@ -1,13 +1,14 @@
+User
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async headers() {
     return [
       {
-        source: "/(api|:path*)", // Match any route including /api and others
+        source: "/api/:path*", // Match any API route
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://finalversion-of-grailed-front-end.vercel.app", // Allow requests from any origin
+            value: "https://finalversion-of-grailed-front-end.vercel.app", // Set your frontend origin
           },
           {
             key: "Access-Control-Allow-Methods",
@@ -19,7 +20,7 @@ const nextConfig = {
           },
         ],
       },
-       {
+      {
         source: "/api/products/:path*", // Match any API route
         headers: [
           {
@@ -34,7 +35,9 @@ const nextConfig = {
             key: "Access-Control-Allow-Headers",
             value: "Content-Type, Authorization",
           },
-           {
+        ],
+      },
+        {
         source: "/api/products/total/:path*", // Match any API route
         headers: [
           {
@@ -83,8 +86,6 @@ const nextConfig = {
             key: "Access-Control-Allow-Headers",
             value: "Content-Type, Authorization",
           },
-        ],
-      },
         ],
       },
     ];
