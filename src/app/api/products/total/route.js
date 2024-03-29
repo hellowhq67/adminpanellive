@@ -1,8 +1,7 @@
 
 import { NextResponse } from 'next/server';
-
 import mongoose from "mongoose";
-import Product from '@/models/product';
+import Product from '@/models/prouduct'; 
 import connectMongoDB from '@/db/db';
 
 // Define the GET function to handle HTTP GET requests
