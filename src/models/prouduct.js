@@ -23,7 +23,7 @@ const productSchema = new mongoose.Schema({
   subcategory: String,
   tag: Array,
   acceptOffer: Boolean,
-});
+},{ timestamps: true });
 
 const Product = mongoose.models.Product || mongoose.model('Product', productSchema);
 
