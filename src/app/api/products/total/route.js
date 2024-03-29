@@ -1,27 +1,17 @@
 
 import { NextResponse } from 'next/server';
-import mongoose from "mongoose";
-import Product from '@/models/prouduct'; 
-import connectMongoDB from '@/db/db';
 
-// Define the GET function to handle HTTP GET requests
+import Product from '@/models/prouduct'; // Import the Product model
+import connectMongoDB from '@/db/db';
 export async function GET() {
   try {
-    // Ensure a single connection is established during application startup
-    if (!mongoose.connection.readyState) {
-      await connectMongoDB(); // Connect to MongoDB if not already connected
-    }
+    await connectMongoDB(); // Connect to your MongoDB database
 
-    // Retrieve only necessary fields to reduce network overhead
-    const products = await Product.find({}, { _id: 0, name: 1, price: 1 });
+    const products = await Product.find({}); // Retrieve all products from the database
 
-    console.log("Products fetched successfully:", products.length);
-
-    // Return the products as JSON response
-    return NextResponse.json({ products });
+    return NextResponse.json({ products }); // Return the products as JSON response
   } catch (error) {
     console.error("Error fetching products:", error);
-    // Return an error response if there's an error
-    return NextResponse.error("Failed to fetch products");
+    return NextResponse.error(error); // Return an error response if there's an error
   }
 }
